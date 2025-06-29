@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Invoices</title>
+</head>
+<body>
+<h2>My Invoices</h2>
+<table border="1">
+    <tr>
+        <th>ID</th>
+        <th>Order ID</th>
+        <th>Amount</th>
+        <th>Billing Date</th>
+        <th>Due Date</th>
+    </tr>
+    <tr th:each="invoice : ${invoices}">
+        <td th:text="${invoice.id}"></td>
+        <td th:text="${invoice.order.id}"></td>
+        <td th:text="${invoice.amount}"></td>
+        <td th:text="${invoice.billingDate}"></td>
+        <td th:text="${invoice.dueDate}"></td>
+    </tr>
+</table>
+<p><a href="/dashboard">Back to Dashboard</a></p>
+</body>
+</html>
